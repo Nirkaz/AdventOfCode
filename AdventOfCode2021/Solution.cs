@@ -66,5 +66,30 @@ namespace AdventOfCode2021
 
             return horizontalPosition * depth;
         }
+
+        //https://adventofcode.com/2021/day/3
+        public static int D3BinaryDiagnostic()
+        {
+            var gammaString = string.Empty;
+            var epsilonString = string.Empty;
+            var inputRaw = GetPuzzleInput("PuzzleInputD3.txt");
+
+            var gammaArray = new int[inputRaw.FirstOrDefault().Length];
+            foreach (var line in inputRaw)
+            {
+                for (var i = 0; i < line.Length; i++)
+                {
+                    gammaArray[i] += int.Parse(line[i].ToString());
+                }
+            }
+
+            for (var i = 0; i < gammaArray.Length; i++)
+            {
+                gammaString += gammaArray[i] > inputRaw.Length / 2 ? "1" : "0";
+                epsilonString += gammaArray[i] > inputRaw.Length / 2 ? "0" : "1";
+            }
+
+            return Convert.ToInt32(gammaString, 2) * Convert.ToInt32(epsilonString, 2); // 198
+        }
     }
 }
