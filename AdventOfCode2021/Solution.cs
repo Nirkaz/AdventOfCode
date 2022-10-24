@@ -39,6 +39,7 @@ namespace AdventOfCode2021
         {
             var horizontalPosition = 0;
             var depth = 0;
+            var aim = 0;
             var input = GetPuzzleInput("PuzzleInputD2.txt");
 
             foreach (var line in input)
@@ -50,12 +51,13 @@ namespace AdventOfCode2021
                 {
                     case "forward":
                         horizontalPosition += value;
+                        depth += aim * value;
                         break;
                     case "down":
-                        depth+= value;
+                        aim += value;
                         break;
                     case "up":
-                        depth-= value;
+                        aim -= value;
                         break;
                     default:
                         break;
