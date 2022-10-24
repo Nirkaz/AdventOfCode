@@ -33,5 +33,36 @@ namespace AdventOfCode2021
 
             return count; // 514
         }
+
+        //https://adventofcode.com/2021/day/2
+        public static int D2Dive()
+        {
+            var horizontalPosition = 0;
+            var depth = 0;
+            var input = GetPuzzleInput("PuzzleInputD2.txt");
+
+            foreach (var line in input)
+            {
+                var command = line.Split()[0];
+                var value = int.Parse(line.Split()[1]);
+
+                switch (command)
+                {
+                    case "forward":
+                        horizontalPosition += value;
+                        break;
+                    case "down":
+                        depth+= value;
+                        break;
+                    case "up":
+                        depth-= value;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return horizontalPosition * depth;
+        }
     }
 }
