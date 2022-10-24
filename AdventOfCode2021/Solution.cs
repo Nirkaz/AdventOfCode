@@ -19,11 +19,19 @@ namespace AdventOfCode2021
         //https://adventofcode.com/2021/day/1
         public static int D1SonarSweep()
         {
-            var res = 0;
+            /*Count the number of times a depth measurement increases from the previous measurement. 
+             * (There is no measurement before the first measurement.)*/
+            var count = 0;
             var input = GetPuzzleInput("PuzzleInputD1.txt");
+            var prevValue = int.Parse(input[0]);
 
+            for (var i = 1; i < input.Length; i++)
+            {
+                if (int.Parse(input[i]) > prevValue) count++;
+                prevValue = int.Parse(input[i]);
+            }
 
-            return res;
+            return count;
         }
     }
 }
