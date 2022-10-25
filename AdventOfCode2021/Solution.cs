@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AdventOfCode2021
 {
@@ -112,6 +113,77 @@ namespace AdventOfCode2021
             }
 
             return Convert.ToInt32(oxygenGeneratorRating.FirstOrDefault(), 2) * Convert.ToInt32(CO2Rating.FirstOrDefault(), 2);
+        }
+
+        public static int D4GiantSquid()
+        {
+            var inputRaw = GetPuzzleInput("PuzzleInputD4.txt");
+            var drawNumbers = Array.ConvertAll(inputRaw[0].Split(','), r => int.Parse(r));
+            var boards = new List<int[,]>();
+
+            for (var i = 2; i < inputRaw.Length; i += 6)
+            {
+                var board = new int[6, 6];
+                var sum = 0;
+
+                for (var j = 0; j < 5; j++)
+                {
+                    var line = Array.ConvertAll(inputRaw[i+j].Split().Where(s => !string.IsNullOrWhiteSpace(s)).ToArray(), s => int.Parse(s));
+
+                    for (var k = 0; k < 5; k++)
+                    {
+                        board[j + 1, k + 1] = line[k];
+                        sum -= line[k];
+                    }
+                }
+
+                board[0, 0] = sum;
+                boards.Add(board);
+            }
+
+            var winner = false;
+            var winnerIndex = -1;
+            var lastDraw = -1;
+
+            foreach (var draw in drawNumbers)
+            {
+                if (winner) break;
+                lastDraw = draw;
+
+                foreach (var board in boards)
+                {
+                    if (winner) break;
+
+                    var column = -1;
+                    var row = -1;
+
+                    for (var i = 1; i < 6; i++)
+                    {
+                        for (var j = 1; j < 6; j++)
+                        {
+                            if (board[i, j] == lastDraw)
+                            {
+                                column = i;
+                                row = j;
+                                board[0, 0] += lastDraw;
+                            }
+                        }
+                    }
+
+                    if (column != -1 && row != -1)
+                    {
+                        board[0, column]++;
+                        board[row, 0]++;
+                        if (board[0, column] == 5 || board[row, 0] == 5)
+                        {
+                            winner = true;
+                            winnerIndex = boards.IndexOf(board);
+                        }
+                    }
+                }
+            }
+
+            return lastDraw * -boards[winnerIndex][0,0]; // 87456
         }
     }
 }
