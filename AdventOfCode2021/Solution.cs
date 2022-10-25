@@ -141,18 +141,18 @@ namespace AdventOfCode2021
                 boards.Add(board);
             }
 
-            var winner = false;
             var winnerIndex = -1;
             var lastDraw = -1;
+            var winnerIndexes = new List<int>();
 
             foreach (var draw in drawNumbers)
             {
-                if (winner) break;
+                if (winnerIndexes.Count == boards.Count) break;
                 lastDraw = draw;
 
                 foreach (var board in boards)
                 {
-                    if (winner) break;
+                    if (winnerIndexes.Contains(boards.IndexOf(board))) continue;
 
                     var column = -1;
                     var row = -1;
@@ -176,14 +176,14 @@ namespace AdventOfCode2021
                         board[row, 0]++;
                         if (board[0, column] == 5 || board[row, 0] == 5)
                         {
-                            winner = true;
                             winnerIndex = boards.IndexOf(board);
+                            winnerIndexes.Add(winnerIndex);
                         }
                     }
                 }
             }
 
-            return lastDraw * -boards[winnerIndex][0,0]; // 87456
+            return lastDraw * -boards[winnerIndex][0,0];
         }
     }
 }
