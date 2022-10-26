@@ -115,6 +115,7 @@ namespace AdventOfCode2021
             return Convert.ToInt32(oxygenGeneratorRating.FirstOrDefault(), 2) * Convert.ToInt32(CO2Rating.FirstOrDefault(), 2);
         }
 
+        //https://adventofcode.com/2021/day/4
         public static int D4GiantSquid()
         {
             var inputRaw = GetPuzzleInput("PuzzleInputD4.txt");
@@ -184,6 +185,149 @@ namespace AdventOfCode2021
             }
 
             return lastDraw * -boards[winnerIndex][0,0];
+        }
+
+        //https://adventofcode.com/2021/day/5
+        public static int D5HydrothermalVenture()
+        {
+            var inputRaw = GetPuzzleInput("PuzzleInputD5.txt");
+            var overlapingPoints = 0; // >= 2
+            //x1,y1 -> x2,y2
+            //An entry like 1,1-> 1,3 covers points 1,1, 1,2, and 1,3.
+            //An entry like 9,7-> 7,7 covers points 9,7, 8,7, and 7,7.
+
+            /*
+                0,9 -> 5,9  horizontal = 6
+                8,0 -> 0,8  D = 8
+                9,4 -> 3,4  horizontal = 
+                2,2 -> 2,1  vertical
+                7,0 -> 7,4  vertical
+                6,4 -> 2,0  D = 4
+                0,9 -> 2,9  horizontal
+                3,4 -> 1,4  horizontal
+                0,0 -> 8,8  D = 8
+                5,5 -> 8,2  -
+            */
+
+            // For now, only consider horizontal and vertical lines: lines where either x1 = x2 or y1 = y2.
+
+            var maxX = 0;
+            var maxY = 0;
+            var fromList = new List<Tuple<int, int>>();
+            var toList = new List<Tuple<int, int>>();
+
+            foreach (var line in inputRaw)
+            {
+                var parse = line.Split();
+                var fromX = int.Parse(parse[0].Split(',')[0]);
+                var fromY = int.Parse(parse[0].Split(',')[1]);
+                var from = new Tuple<int, int>(fromX, fromY);
+                fromList.Add(from);
+
+                var toX = int.Parse(parse[2].Split(',')[0]);
+                var toY = int.Parse(parse[2].Split(',')[1]);
+                var to = new Tuple<int, int>(toX, toY);
+                toList.Add(to);
+
+                if (fromX > maxX) maxX = fromX;
+                if (fromY > maxY) maxY = fromY;
+                if (toX > maxX) maxX = toX;
+                if (toY > maxY) maxY = toY;
+            }
+
+            var grid = new int[maxX + 1, maxY + 1];
+
+            for (var i = 0; i < inputRaw.Length; i++)
+            {
+                if (fromList[i].Item1 == toList[i].Item1) // vertical = 2
+                {
+                    if (fromList[i].Item2 < toList[i].Item2)
+                    {
+                        for (var j = fromList[i].Item2; j <= toList[i].Item2; j++)
+                        {
+                            grid[fromList[i].Item1, j]++;
+                        }
+                    }
+                    else
+                    {
+                        for (var j = fromList[i].Item2; j >= toList[i].Item2; j--)
+                        {
+                            grid[fromList[i].Item1, j]++;
+                        }
+                    }
+                    continue;
+                }
+
+                if (fromList[i].Item2 == toList[i].Item2) // horizontal = 4
+                {
+                    if (fromList[i].Item1 < toList[i].Item1)
+                    {
+                        for (var j = fromList[i].Item1; j <= toList[i].Item1; j++)
+                        {
+                            grid[j, fromList[i].Item2]++;
+                        }
+                    }
+                    else
+                    {
+                        for (var j = fromList[i].Item1; j >= toList[i].Item1; j--)
+                        {
+                            grid[j, fromList[i].Item2]++;
+                        }
+                    }
+                    continue;
+                }
+
+                //if (Math.Abs(fromList[i].Item1 - fromList[i].Item2) == Math.Abs(toList[i].Item1 - toList[i].Item2))
+                //{
+                //    var absX =  
+                //    /*
+                //        8,0 -> 0,8  D = 8
+                //        8,0
+                //            7,1
+                //                6,2
+                //                    5,3
+                //                        4,4
+                //                            3,5
+                //                                2,6
+                //                                    1,7
+                //                                        0,8
+                //        6,4 -> 2,0  D = 4
+                //        0,0 -> 8,8  D = 8
+                //    */
+                //    var count = 0;
+
+
+
+                //    if (fromList[i].Item1 < toList[i].Item1)
+                //    {
+                //        for (var j = fromList[i].Item1; j <= toList[i].Item1; j++)
+                //        {
+                //            grid[j, j]++;
+                //            count++;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        for (var j = fromList[i].Item1; j >= toList[i].Item1; j--)
+                //        {
+                //            grid[j, j]++;
+                //            count++;
+                //        }
+                //    }
+                //}
+            }
+
+            for (var i = 0; i < maxX + 1; i++)
+            {
+                for (var j = 0; j < maxY + 1; j++)
+                {
+                    Console.Write($"{grid[j, i]} ");
+                    if (grid[j, i] >= 2) overlapingPoints++;
+                }
+                Console.WriteLine();
+            }
+
+            return overlapingPoints; // 5, 12
         }
     }
 }
