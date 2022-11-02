@@ -307,5 +307,36 @@ namespace AdventOfCode2021
 
             return overlapingPoints;
         }
+
+        //https://adventofcode.com/2021/day/6
+        public static int D6Lanternfish()
+        {
+            var fishes = Array.ConvertAll(GetPuzzleInput("PuzzleInputD6.txt").FirstOrDefault().Split(','), s => int.Parse(s)).ToList();
+            var days = 80;
+
+            while (days > 0)
+            {
+                var born = 0;
+
+                for (var i = 0; i < fishes.Count; i++)
+                {
+                    if (fishes[i] == 0)
+                    {
+                        born++;
+                        fishes[i] = 6;
+                        continue;
+                    }
+
+                    fishes[i]--;
+                }
+
+                for (var i = 0; i < born; i++)
+                    fishes.Add(8);
+
+                days--;
+            }
+
+            return fishes.Count;
+        }
     }
 }
