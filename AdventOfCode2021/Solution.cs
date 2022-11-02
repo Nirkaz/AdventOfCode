@@ -356,7 +356,8 @@ namespace AdventOfCode2021
 
                 foreach (var crab in positions)
                 {
-                    count += Math.Abs(crab - i);
+                    var steps = Math.Abs(crab - i);
+                    count += (1 + steps) * steps / 2;
                 }
 
                 if (count < fuel)
