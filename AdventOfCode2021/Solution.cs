@@ -343,5 +343,27 @@ namespace AdventOfCode2021
 
             return countZero + countOne + countTwo + countThree + countFour + countFive + countSix + countSeven + countEight;
         }
+
+        //https://adventofcode.com/2021/day/7
+        public static int D7TheTreacheryOfWhales()
+        {
+            var positions = Array.ConvertAll(GetPuzzleInput("PuzzleInputD7.txt").FirstOrDefault().Split(','), s => int.Parse(s)).ToList();
+            var fuel = int.MaxValue;
+
+            for (var i = positions.Min(); i <= positions.Max(); i++)
+            {
+                var count = 0;
+
+                foreach (var crab in positions)
+                {
+                    count += Math.Abs(crab - i);
+                }
+
+                if (count < fuel)
+                    fuel = count;
+            }
+
+            return fuel;
+        }
     }
 }
