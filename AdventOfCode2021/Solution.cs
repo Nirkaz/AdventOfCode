@@ -309,34 +309,39 @@ namespace AdventOfCode2021
         }
 
         //https://adventofcode.com/2021/day/6
-        public static int D6Lanternfish()
+        public static long D6Lanternfish()
         {
             var fishes = Array.ConvertAll(GetPuzzleInput("PuzzleInputD6.txt").FirstOrDefault().Split(','), s => int.Parse(s)).ToList();
-            var days = 80;
+            var days = 256;
+
+            long countZero   =   fishes.Where(s => s == 0).Count(); // 0 -> 6 + countEight = countZero
+            long countOne    =   fishes.Where(s => s == 1).Count(); // 1 -> 0
+            long countTwo    =   fishes.Where(s => s == 2).Count(); // 2 -> 1
+            long countThree  =   fishes.Where(s => s == 3).Count(); // 3 -> 2
+            long countFour   =   fishes.Where(s => s == 4).Count(); // 4 -> 3
+            long countFive   =   fishes.Where(s => s == 5).Count(); // 5 -> 4
+            long countSix    =   fishes.Where(s => s == 6).Count(); // 6 -> 5
+            long countSeven  =   fishes.Where(s => s == 7).Count(); // 7 -> 6
+            long countEight  =   fishes.Where(s => s == 8).Count(); // 8 -> 7
 
             while (days > 0)
             {
-                var born = 0;
+                long newBorn = countZero;
 
-                for (var i = 0; i < fishes.Count; i++)
-                {
-                    if (fishes[i] == 0)
-                    {
-                        born++;
-                        fishes[i] = 6;
-                        continue;
-                    }
-
-                    fishes[i]--;
-                }
-
-                for (var i = 0; i < born; i++)
-                    fishes.Add(8);
+                countZero = countOne;
+                countOne = countTwo;
+                countTwo = countThree;
+                countThree = countFour;
+                countFour = countFive;
+                countFive = countSix;
+                countSix = countSeven + newBorn;
+                countSeven = countEight;
+                countEight = newBorn;
 
                 days--;
             }
 
-            return fishes.Count;
+            return countZero + countOne + countTwo + countThree + countFour + countFive + countSix + countSeven + countEight;
         }
     }
 }
