@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021.Puzzles
 {
+    //https://adventofcode.com/2021/day/6
     public class D6Lanternfish
     {
         public static long SolvePart1(string[]? customInput = null)
@@ -38,7 +39,6 @@ namespace AdventOfCode2021.Puzzles
             return fishes.Count;
         }
 
-        //https://adventofcode.com/2021/day/6
         public static long SolvePart2(string[]? customInput = null)
         {
             var fishes = Array.ConvertAll(customInput ?? PuzzleInput.GetFromFileAsStrings("PuzzleInputD6.txt").First().Split(','), int.Parse).ToList();

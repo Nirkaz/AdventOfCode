@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021.Puzzles
 {
+    //https://adventofcode.com/2021/day/5
     public class D5HydrothermalVenture
     {
         public static int SolvePart1(string[]? customInput = null)
@@ -90,7 +91,6 @@ namespace AdventOfCode2021.Puzzles
             return overlapingPoints; // 5, 12
         }
 
-        //https://adventofcode.com/2021/day/5
         public static int SolvePart2(string[]? customInput = null)
         {
             var inputRaw = customInput ?? PuzzleInput.GetFromFileAsStrings("PuzzleInputD5.txt");

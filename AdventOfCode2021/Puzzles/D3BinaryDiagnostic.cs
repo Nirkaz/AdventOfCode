@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021.Puzzles
 {
+    //https://adventofcode.com/2021/day/3
     public class D3BinaryDiagnostic
     {
         public static int SolvePart1(string[]? customInput = null)
@@ -32,7 +33,6 @@ namespace AdventOfCode2021.Puzzles
             return Convert.ToInt32(gammaString, 2) * Convert.ToInt32(epsilonString, 2); // 198
         }
 
-        //https://adventofcode.com/2021/day/3
         public static int SolvePart2(string[]? customInput = null)
         {
             var inputRaw = customInput ?? PuzzleInput.GetFromFileAsStrings("PuzzleInputD3.txt");
