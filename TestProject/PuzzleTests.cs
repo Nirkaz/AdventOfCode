@@ -1,18 +1,18 @@
 using AdventOfCode2021.Puzzles;
 
-namespace TestProject
+namespace TestProject;
+
+public class PuzzleTests
 {
-    public class PuzzleTests
+    private static string[] GeneratePuzzleInput(string input)
     {
-        private string[] GeneratePuzzleInput(string input)
-        {
-            return input.Split(Environment.NewLine);
-        }
+        return input.Split(Environment.NewLine);
+    }
 
-        [Fact]
-        public void D1SonarSweepPart1()
-        {
-            var input = """
+    [Fact]
+    public void D1SonarSweepPart1()
+    {
+        var input = """
                 199
                 200
                 208
@@ -25,13 +25,13 @@ namespace TestProject
                 263
                 """;
 
-            Assert.Equal(7, D1SonarSweep.SolvePart1(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(7, D1SonarSweep.SolvePart1(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D1SonarSweepPart2()
-        {
-            var input = """
+    [Fact]
+    public void D1SonarSweepPart2()
+    {
+        var input = """
                 199
                 200
                 208
@@ -44,13 +44,13 @@ namespace TestProject
                 263
                 """;
 
-            Assert.Equal(5, D1SonarSweep.SolvePart2(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(5, D1SonarSweep.SolvePart2(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D2DivePart1()
-        {
-            var input = """
+    [Fact]
+    public void D2DivePart1()
+    {
+        var input = """
                 forward 5
                 down 5
                 forward 8
@@ -59,13 +59,13 @@ namespace TestProject
                 forward 2
                 """;
 
-            Assert.Equal(150, D2Dive.SolvePart1(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(150, D2Dive.SolvePart1(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D2DivePart2()
-        {
-            var input = """
+    [Fact]
+    public void D2DivePart2()
+    {
+        var input = """
                 forward 5
                 down 5
                 forward 8
@@ -74,13 +74,13 @@ namespace TestProject
                 forward 2
                 """;
 
-            Assert.Equal(900, D2Dive.SolvePart2(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(900, D2Dive.SolvePart2(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D3BinaryDiagnosticPart1() 
-        {
-            var input = """
+    [Fact]
+    public void D3BinaryDiagnosticPart1()
+    {
+        var input = """
                 00100
                 11110
                 10110
@@ -95,13 +95,13 @@ namespace TestProject
                 01010
                 """;
 
-            Assert.Equal(198, D3BinaryDiagnostic.SolvePart1(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(198, D3BinaryDiagnostic.SolvePart1(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D3BinaryDiagnosticPart2()
-        {
-            var input = """
+    [Fact]
+    public void D3BinaryDiagnosticPart2()
+    {
+        var input = """
                 00100
                 11110
                 10110
@@ -116,13 +116,13 @@ namespace TestProject
                 01010
                 """;
 
-            Assert.Equal(230, D3BinaryDiagnostic.SolvePart2(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(230, D3BinaryDiagnostic.SolvePart2(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D4GiantSquidPart1()
-        {
-            var input = """
+    [Fact]
+    public void D4GiantSquidPart1()
+    {
+        var input = """
                 7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
 
                 22 13 17 11  0
@@ -144,13 +144,13 @@ namespace TestProject
                  2  0 12  3  7
                 """;
 
-            Assert.Equal(4512, D4GiantSquid.SolvePart1(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(4512, D4GiantSquid.SolvePart1(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D4GiantSquidPart2()
-        {
-            var input = """
+    [Fact]
+    public void D4GiantSquidPart2()
+    {
+        var input = """
                 7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
                 
                 22 13 17 11  0
@@ -172,13 +172,13 @@ namespace TestProject
                  2  0 12  3  7
                 """;
 
-            Assert.Equal(1924, D4GiantSquid.SolvePart2(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(1924, D4GiantSquid.SolvePart2(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D5HydrothermalVenturePart1()
-        {
-            var input = """
+    [Fact]
+    public void D5HydrothermalVenturePart1()
+    {
+        var input = """
                 0,9 -> 5,9
                 8,0 -> 0,8
                 9,4 -> 3,4
@@ -191,13 +191,13 @@ namespace TestProject
                 5,5 -> 8,2
                 """;
 
-            Assert.Equal(5, D5HydrothermalVenture.SolvePart1(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(5, D5HydrothermalVenture.SolvePart1(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D5HydrothermalVenturePart2()
-        {
-            var input = """
+    [Fact]
+    public void D5HydrothermalVenturePart2()
+    {
+        var input = """
                 0,9 -> 5,9
                 8,0 -> 0,8
                 9,4 -> 3,4
@@ -210,47 +210,46 @@ namespace TestProject
                 5,5 -> 8,2
                 """;
 
-            Assert.Equal(12, D5HydrothermalVenture.SolvePart2(GeneratePuzzleInput(input)));
-        }
+        Assert.Equal(12, D5HydrothermalVenture.SolvePart2(GeneratePuzzleInput(input)));
+    }
 
-        [Fact]
-        public void D6LanternfishPart1()
-        {
-            var input = """
+    [Fact]
+    public void D6LanternfishPart1()
+    {
+        var input = """
                 3,4,3,1,2
                 """;
 
-            Assert.Equal(5934, D6Lanternfish.SolvePart1(input.Split(',')));
-        }
+        Assert.Equal(5934, D6Lanternfish.SolvePart1(input.Split(',')));
+    }
 
-        [Fact]
-        public void D6LanternfishPart2()
-        {
-            var input = """
+    [Fact]
+    public void D6LanternfishPart2()
+    {
+        var input = """
                 3,4,3,1,2
                 """;
 
-            Assert.Equal(26984457539, D6Lanternfish.SolvePart2(input.Split(',')));
-        }
+        Assert.Equal(26984457539, D6Lanternfish.SolvePart2(input.Split(',')));
+    }
 
-        [Fact]
-        public void D7TheTreacheryOfWhalesPart1()
-        {
-            var input = """
+    [Fact]
+    public void D7TheTreacheryOfWhalesPart1()
+    {
+        var input = """
                 16,1,2,0,4,2,7,1,2,14
                 """;
 
-            Assert.Equal(37, D7TheTreacheryOfWhales.SolvePart1(input.Split(',')));
-        }
+        Assert.Equal(37, D7TheTreacheryOfWhales.SolvePart1(input.Split(',')));
+    }
 
-        [Fact]
-        public void D7TheTreacheryOfWhalesPart2()
-        {
-            var input = """
+    [Fact]
+    public void D7TheTreacheryOfWhalesPart2()
+    {
+        var input = """
                 16,1,2,0,4,2,7,1,2,14
                 """;
 
-            Assert.Equal(168, D7TheTreacheryOfWhales.SolvePart2(input.Split(',')));
-        }
+        Assert.Equal(168, D7TheTreacheryOfWhales.SolvePart2(input.Split(',')));
     }
 }
