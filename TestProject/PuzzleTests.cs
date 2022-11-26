@@ -9,6 +9,11 @@ public class PuzzleTests
         return input.Split(Environment.NewLine);
     }
 
+    private static int[] GeneratePuzzleInputInts(string input)
+    {
+        return Array.ConvertAll(GeneratePuzzleInput(input), int.Parse);
+    }
+
     [Fact]
     public void D1SonarSweepPart1()
     {
@@ -251,5 +256,101 @@ public class PuzzleTests
                 """;
 
         Assert.Equal(168, D7TheTreacheryOfWhales.SolvePart2(input.Split(',')));
+    }
+
+    [Fact]
+    public void D8SevenSegmentSearchPart1()
+    {
+        var input = """
+                be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
+                edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
+                fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg
+                fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb
+                aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea
+                fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb
+                dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
+                bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
+                egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
+                gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
+                """;
+
+        Assert.Equal(26, D8SevenSegmentSearch.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Fact]
+    public void D8SevenSegmentSearchPart2()
+    {
+        var input = """
+                be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
+                edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
+                fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg
+                fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb
+                aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea
+                fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb
+                dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
+                bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
+                egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
+                gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
+                """;
+
+        Assert.Equal(61229, D8SevenSegmentSearch.SolvePart2(GeneratePuzzleInput(input)));
+    }
+
+    [Theory]
+    [InlineData("bcdf")] [InlineData("bdfc")] [InlineData("bfcd")]
+    [InlineData("cdfb")] [InlineData("cfbd")] [InlineData("cbdf")]
+    [InlineData("dfbc")] [InlineData("dbcf")] [InlineData("dcfb")]
+    [InlineData("fbcd")] [InlineData("fcdb")] [InlineData("fdbc")]
+    public void D8SevenSegmentSearch_TestFour_True(string? input)
+    {
+        Assert.True(D8SevenSegmentSearch.TestFour(input));
+    }
+
+    [Theory]
+    [InlineData(null)] [InlineData("")]
+    [InlineData("c")] [InlineData("f")]
+    [InlineData("cc")] [InlineData("ff")]
+    [InlineData("aa")] [InlineData("  ")]
+    [InlineData("fcc")] [InlineData("cfc")] [InlineData("ccf")]
+    [InlineData("bcdff")] [InlineData("bbcdf")]
+    [InlineData("abc")] [InlineData("acf")]
+    [InlineData("abcdefg")] [InlineData("\n")]
+    public void D8SevenSegmentSearch_TestFour_False(string? input)
+    {
+        Assert.False(D8SevenSegmentSearch.TestFour(input));
+    }
+
+    [Theory]
+    [InlineData("cf")] [InlineData("fc")]
+    public void D8SevenSegmentSearch_TestOne_True(string? input)
+    {
+        Assert.True(D8SevenSegmentSearch.TestOne(input));
+    }
+
+    [Theory]
+    [InlineData(null)] [InlineData("")]
+    [InlineData("c")] [InlineData("f")]
+    [InlineData("fcc")] [InlineData("cfc")] [InlineData("ccf")]
+    [InlineData("cfcf")] [InlineData("fcfc")]
+    [InlineData("abc")] [InlineData("acf")]
+    [InlineData("abcdefg")] [InlineData("-123")]
+    [InlineData("\n")]
+    public void D8SevenSegmentSearch_TestOne_False(string? input)
+    {
+        Assert.False(D8SevenSegmentSearch.TestOne(input));
+    }
+
+    [Fact]
+    public void D9SmokeBasinPart1()
+    {
+        var input = """
+            2199943210
+            3987894921
+            9856789892
+            8767896789
+            9899965678
+            """;
+
+        Assert.Equal(15, D9SmokeBasin.SolvePart1(GeneratePuzzleInput(input)));
     }
 }

@@ -9,4 +9,9 @@ public static class PuzzleInput
         var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, @$"Input\{fileName}");
         return File.ReadAllLines(path);
     }
+
+    public static int[] GetFromFileAsInts(string fileName)
+    {
+        return Array.ConvertAll(GetFromFileAsStrings(fileName), int.Parse);
+    }
 }

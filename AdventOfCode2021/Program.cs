@@ -14,3 +14,6 @@ Console.WriteLine($"{nameof(D6Lanternfish)}.{nameof(D6Lanternfish.SolvePart1)}: 
 Console.WriteLine($"{nameof(D6Lanternfish)}.{nameof(D6Lanternfish.SolvePart2)}: {D6Lanternfish.SolvePart2()}");
 Console.WriteLine($"{nameof(D7TheTreacheryOfWhales)}.{nameof(D7TheTreacheryOfWhales.SolvePart1)}: {D7TheTreacheryOfWhales.SolvePart1()}");
 Console.WriteLine($"{nameof(D7TheTreacheryOfWhales)}.{nameof(D7TheTreacheryOfWhales.SolvePart2)}: {D7TheTreacheryOfWhales.SolvePart2()}");
+Console.WriteLine($"{nameof(D8SevenSegmentSearch)}.{nameof(D8SevenSegmentSearch.SolvePart1)}: {D8SevenSegmentSearch.SolvePart1()}");
+//Console.WriteLine($"{nameof(D8SevenSegmentSearch)}.{nameof(D8SevenSegmentSearch.SolvePart2)}: {D8SevenSegmentSearch.SolvePart2()}");
+Console.WriteLine($"{nameof(D9SmokeBasin)}.{nameof(D9SmokeBasin.SolvePart1)}: {D9SmokeBasin.SolvePart1()}");
