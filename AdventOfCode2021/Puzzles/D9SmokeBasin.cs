@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading;
 
 namespace AdventOfCode2021.Puzzles;
 
@@ -71,5 +72,14 @@ public static class D9SmokeBasin
                         risk += heightmap[i, j] + 1;
 
         return risk;
+    }
+
+    public static int SolvePart2(string[] strings)
+    {
+        //Find the three largest basins and multiply their sizes together.
+        //In the above example, this is 9 * 14 * 9 = 1134.
+        //What do you get if you multiply together the sizes of the three largest basins ?
+
+        throw new NotImplementedException();
     }
 }

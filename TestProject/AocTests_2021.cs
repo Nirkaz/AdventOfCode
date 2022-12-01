@@ -1,19 +1,9 @@
 using AdventOfCode2021.Puzzles;
 
-namespace TestProject;
+namespace AocTests;
 
-public class PuzzleTests
+public class AocTests_2021 : AocTests_Base
 {
-    private static string[] GeneratePuzzleInput(string input)
-    {
-        return input.Split(Environment.NewLine);
-    }
-
-    private static int[] GeneratePuzzleInputInts(string input)
-    {
-        return Array.ConvertAll(GeneratePuzzleInput(input), int.Parse);
-    }
-
     [Fact]
     public void D1SonarSweepPart1()
     {
@@ -352,5 +342,19 @@ public class PuzzleTests
             """;
 
         Assert.Equal(15, D9SmokeBasin.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Fact]
+    public void D9SmokeBasinPart2()
+    {
+        var input = """
+            2199943210
+            3987894921
+            9856789892
+            8767896789
+            9899965678
+            """;
+
+        Assert.Equal(1134, D9SmokeBasin.SolvePart2(GeneratePuzzleInput(input)));
     }
 }
