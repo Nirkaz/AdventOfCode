@@ -49,4 +49,27 @@ public class AocTests_2022 : AocTests_Base
 
         Assert.Equal(45000, D1CalorieCounting.SolvePart2(GeneratePuzzleInput(input)));
     }
+
+    [Fact]
+    public void D2_RockPaperScissors_Part1()
+    {
+        var input = """
+                A Y
+                B X
+                C Z
+                """;
+
+        Assert.Equal(15, D2RockPaperScissors.SolvePart1(GeneratePuzzleInput(input)));
+    }
+    [Fact]
+    public void D2_RockPaperScissors_Part2()
+    {
+        var input = """
+                A Y
+                B X
+                C Z
+                """;
+
+        Assert.Equal(12, D2RockPaperScissors.SolvePart2(GeneratePuzzleInput(input)));
+    }
 }
