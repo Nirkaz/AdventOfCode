@@ -103,4 +103,34 @@ public class AocTests_2022 : AocTests_Base
 
         Assert.Equal(70, D3RucksackReorganization.SolvePart2(GeneratePuzzleInput(input)));
     }
+
+    [Fact]
+    public void D4_CampCleanup_Part1()
+    {
+        var input = """
+                2-4,6-8
+                2-3,4-5
+                5-7,7-9
+                2-8,3-7
+                6-6,4-6
+                2-6,4-8
+                """;
+
+        Assert.Equal(2, D4CampCleanup.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Fact]
+    public void D4_CampCleanup_Part2()
+    {
+        var input = """
+                2-4,6-8
+                2-3,4-5
+                5-7,7-9
+                2-8,3-7
+                6-6,4-6
+                2-6,4-8
+                """;
+
+        Assert.Equal(4, D4CampCleanup.SolvePart2(GeneratePuzzleInput(input)));
+    }
 }

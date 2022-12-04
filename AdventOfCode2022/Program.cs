@@ -8,3 +8,6 @@ Console.WriteLine($"{nameof(D2RockPaperScissors)}.{nameof(D2RockPaperScissors.So
 
 Console.WriteLine($"{nameof(D3RucksackReorganization)}.{nameof(D3RucksackReorganization.SolvePart1)}: {D3RucksackReorganization.SolvePart1()}");
 Console.WriteLine($"{nameof(D3RucksackReorganization)}.{nameof(D3RucksackReorganization.SolvePart2)}: {D3RucksackReorganization.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D4CampCleanup)}.{nameof(D4CampCleanup.SolvePart1)}: {D4CampCleanup.SolvePart1()}");
+Console.WriteLine($"{nameof(D4CampCleanup)}.{nameof(D4CampCleanup.SolvePart2)}: {D4CampCleanup.SolvePart2()}");
