@@ -1,7 +1,7 @@
 # AdventOfCode
 
-C# solutions to the [Advent of Code](https://adventofcode.com) problems.
-i'm not trying to be competitive, I just doing it for fun.
+C# solutions to the [Advent of Code](https://adventofcode.com) problems.  
+I'm not trying to be competitive, I just doing it for fun.
 
 ## Current progress:
 
