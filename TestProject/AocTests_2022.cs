@@ -133,4 +133,40 @@ public class AocTests_2022 : AocTests_Base
 
         Assert.Equal(4, D4CampCleanup.SolvePart2(GeneratePuzzleInput(input)));
     }
+
+    [Fact]
+    public void D5_SupplyStacks_Part1()
+    {
+        var input = """
+                    [D]    
+                [N] [C]    
+                [Z] [M] [P]
+                 1   2   3 
+
+                move 1 from 2 to 1
+                move 3 from 1 to 3
+                move 2 from 2 to 1
+                move 1 from 1 to 2
+                """;
+
+        Assert.Equal("CMZ", D5SupplyStacks.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Fact]
+    public void D5_SupplyStacks_Part2()
+    {
+        var input = """
+                    [D]    
+                [N] [C]    
+                [Z] [M] [P]
+                 1   2   3 
+
+                move 1 from 2 to 1
+                move 3 from 1 to 3
+                move 2 from 2 to 1
+                move 1 from 1 to 2
+                """;
+
+        Assert.Equal("MCD", D5SupplyStacks.SolvePart2(GeneratePuzzleInput(input)));
+    }
 }

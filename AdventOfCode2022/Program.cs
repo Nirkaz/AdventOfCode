@@ -11,3 +11,6 @@ Console.WriteLine($"{nameof(D3RucksackReorganization)}.{nameof(D3RucksackReorgan
 
 Console.WriteLine($"{nameof(D4CampCleanup)}.{nameof(D4CampCleanup.SolvePart1)}: {D4CampCleanup.SolvePart1()}");
 Console.WriteLine($"{nameof(D4CampCleanup)}.{nameof(D4CampCleanup.SolvePart2)}: {D4CampCleanup.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D5SupplyStacks)}.{nameof(D5SupplyStacks.SolvePart1)}: {D5SupplyStacks.SolvePart1()}");
+Console.WriteLine($"{nameof(D5SupplyStacks)}.{nameof(D5SupplyStacks.SolvePart2)}: {D5SupplyStacks.SolvePart2()}");
