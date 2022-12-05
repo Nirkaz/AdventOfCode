@@ -2,7 +2,6 @@
 
 //https://adventofcode.com/2022/day/4
 public static class D4CampCleanup
-
 {
     public static int SolvePart1(string[]? customInput = null)
     {
