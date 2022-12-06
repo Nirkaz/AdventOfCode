@@ -169,4 +169,26 @@ public class AocTests_2022 : AocTests_Base
 
         Assert.Equal("MCD", D5SupplyStacks.SolvePart2(GeneratePuzzleInput(input)));
     }
+
+    [Theory]
+    [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
+    [InlineData("bvwbjplbgvbhsrlpgdmjqwftvncz", 5)]
+    [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 6)]
+    [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 10)]
+    [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11)]
+    public void D6_TuningTrouble_Part1(string input, int expectedOutput)
+    {
+        Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Theory]
+    [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
+    [InlineData("bvwbjplbgvbhsrlpgdmjqwftvncz", 23)]
+    [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 23)]
+    [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 29)]
+    [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26)]
+    public void D6_TuningTrouble_Part2(string input, int expectedOutput)
+    {
+        Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart2(GeneratePuzzleInput(input)));
+    }
 }
