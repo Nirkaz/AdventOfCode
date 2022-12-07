@@ -12,8 +12,8 @@ I'm not trying to be competitive, I just doing it for fun.
 |Day 3|⭐⭐|⭐⭐|
 |Day 4|⭐⭐|⭐⭐|
 |Day 5|⭐⭐|⭐⭐|
-|Day 6||⭐⭐|
+|Day 6|⭐⭐|⭐⭐|
 |Day 7||⭐⭐|
 |Day 8||⭐|
 |Day 9||⭐|
-|Total|10/50🌟|16/50🌟|
+|Total|12/50🌟|16/50🌟|
