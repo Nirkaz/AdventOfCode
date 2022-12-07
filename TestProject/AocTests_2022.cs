@@ -191,4 +191,68 @@ public class AocTests_2022 : AocTests_Base
     {
         Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart2(GeneratePuzzleInput(input)));
     }
+
+    [Fact]
+    public void D7_NoSpaceLeftOnDevice_Part1()
+    {
+        var input = """
+                $ cd /
+                $ ls
+                dir a
+                14848514 b.txt
+                8504156 c.dat
+                dir d
+                $ cd a
+                $ ls
+                dir e
+                29116 f
+                2557 g
+                62596 h.lst
+                $ cd e
+                $ ls
+                584 i
+                $ cd ..
+                $ cd ..
+                $ cd d
+                $ ls
+                4060174 j
+                8033020 d.log
+                5626152 d.ext
+                7214296 k
+                """;
+
+        Assert.Equal(95437, D7NoSpaceLeftOnDevice.SolvePart1(GeneratePuzzleInput(input)));
+    }
+
+    [Fact]
+    public void D7_NoSpaceLeftOnDevice_Part2()
+    {
+        var input = """
+                $ cd /
+                $ ls
+                dir a
+                14848514 b.txt
+                8504156 c.dat
+                dir d
+                $ cd a
+                $ ls
+                dir e
+                29116 f
+                2557 g
+                62596 h.lst
+                $ cd e
+                $ ls
+                584 i
+                $ cd ..
+                $ cd ..
+                $ cd d
+                $ ls
+                4060174 j
+                8033020 d.log
+                5626152 d.ext
+                7214296 k
+                """;
+
+        Assert.Equal(24933642, D7NoSpaceLeftOnDevice.SolvePart2(GeneratePuzzleInput(input)));
+    }
 }

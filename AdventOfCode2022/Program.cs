@@ -17,3 +17,6 @@ Console.WriteLine($"{nameof(D5SupplyStacks)}.{nameof(D5SupplyStacks.SolvePart2)}
 
 Console.WriteLine($"{nameof(D6TuningTrouble)}.{nameof(D6TuningTrouble.SolvePart1)}: {D6TuningTrouble.SolvePart1()}");
 Console.WriteLine($"{nameof(D6TuningTrouble)}.{nameof(D6TuningTrouble.SolvePart2)}: {D6TuningTrouble.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D7NoSpaceLeftOnDevice)}.{nameof(D7NoSpaceLeftOnDevice.SolvePart1)}: {D7NoSpaceLeftOnDevice.SolvePart1()}");
+Console.WriteLine($"{nameof(D7NoSpaceLeftOnDevice)}.{nameof(D7NoSpaceLeftOnDevice.SolvePart2)}: {D7NoSpaceLeftOnDevice.SolvePart2()}");
