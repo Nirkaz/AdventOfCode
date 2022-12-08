@@ -83,6 +83,14 @@ public class AocTests_2022 : AocTests_Base
         7214296 k
         """;
 
+    private const string inputD8 = """
+        30373
+        25512
+        65332
+        33549
+        35390
+        """;
+
     [Fact]
     public void D1_CalorieCounting_Part1() => Assert.Equal(24000, D1CalorieCounting.SolvePart1(GeneratePuzzleInput(inputD1)));
 
@@ -134,4 +142,10 @@ public class AocTests_2022 : AocTests_Base
 
     [Fact]
     public void D7_NoSpaceLeftOnDevice_Part2() => Assert.Equal(24933642, D7NoSpaceLeftOnDevice.SolvePart2(GeneratePuzzleInput(inputD7)));
+
+    [Fact]
+    public void D8_TreetopTreeHouse_Part1() => Assert.Equal(21, D8TreetopTreeHouse.SolvePart1(GeneratePuzzleInput(inputD8)));
+
+    [Fact]
+    public void D8_TreetopTreeHouse_Part2() => Assert.Equal(8, D8TreetopTreeHouse.SolvePart2(GeneratePuzzleInput(inputD8)));
 }

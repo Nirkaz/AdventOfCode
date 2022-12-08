@@ -27,3 +27,7 @@ Console.WriteLine($"\t Part 2: {D6TuningTrouble.SolvePart2()}");
 Console.WriteLine($"{nameof(D7NoSpaceLeftOnDevice)}");
 Console.WriteLine($"\t Part 1: {D7NoSpaceLeftOnDevice.SolvePart1()}");
 Console.WriteLine($"\t Part 2: {D7NoSpaceLeftOnDevice.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D8TreetopTreeHouse)}");
+Console.WriteLine($"\t Part 1: {D8TreetopTreeHouse.SolvePart1()}");
+Console.WriteLine($"\t Part 2: {D8TreetopTreeHouse.SolvePart2()}");
