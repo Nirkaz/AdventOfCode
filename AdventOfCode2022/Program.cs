@@ -31,3 +31,7 @@ Console.WriteLine($"\t Part 2: {D7NoSpaceLeftOnDevice.SolvePart2()}");
 Console.WriteLine($"{nameof(D8TreetopTreeHouse)}");
 Console.WriteLine($"\t Part 1: {D8TreetopTreeHouse.SolvePart1()}");
 Console.WriteLine($"\t Part 2: {D8TreetopTreeHouse.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D9RopeBridge)}");
+Console.WriteLine($"\t Part 1: {D9RopeBridge.SolvePart1()}");
+Console.WriteLine($"\t Part 2: {D9RopeBridge.SolvePart2()}");

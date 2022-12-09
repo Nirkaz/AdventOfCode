@@ -91,35 +91,67 @@ public class AocTests_2022 : AocTests_Base
         35390
         """;
 
-    [Fact]
-    public void D1_CalorieCounting_Part1() => Assert.Equal(24000, D1CalorieCounting.SolvePart1(GeneratePuzzleInput(inputD1)));
+    private const string inputD9 = """
+        R 4
+        U 4
+        L 3
+        D 1
+        R 4
+        D 1
+        L 5
+        R 2
+        """;
+
+    private const string inputD9Larger = """
+        R 5
+        U 8
+        L 8
+        D 3
+        R 17
+        D 10
+        L 25
+        U 20
+        """;
 
     [Fact]
-    public void D1_CalorieCounting_Part2() => Assert.Equal(45000, D1CalorieCounting.SolvePart2(GeneratePuzzleInput(inputD1)));
+    public void D1_CalorieCounting_Part1() 
+        => Assert.Equal(24000, D1CalorieCounting.SolvePart1(GeneratePuzzleInput(inputD1)));
 
     [Fact]
-    public void D2_RockPaperScissors_Part1() => Assert.Equal(15, D2RockPaperScissors.SolvePart1(GeneratePuzzleInput(inputD2)));
+    public void D1_CalorieCounting_Part2() 
+        => Assert.Equal(45000, D1CalorieCounting.SolvePart2(GeneratePuzzleInput(inputD1)));
 
     [Fact]
-    public void D2_RockPaperScissors_Part2() => Assert.Equal(12, D2RockPaperScissors.SolvePart2(GeneratePuzzleInput(inputD2)));
+    public void D2_RockPaperScissors_Part1() 
+        => Assert.Equal(15, D2RockPaperScissors.SolvePart1(GeneratePuzzleInput(inputD2)));
 
     [Fact]
-    public void D3_RucksackReorganization_Part1() => Assert.Equal(157, D3RucksackReorganization.SolvePart1(GeneratePuzzleInput(inputD3)));
+    public void D2_RockPaperScissors_Part2() 
+        => Assert.Equal(12, D2RockPaperScissors.SolvePart2(GeneratePuzzleInput(inputD2)));
 
     [Fact]
-    public void D3_RucksackReorganization_Part2() => Assert.Equal(70, D3RucksackReorganization.SolvePart2(GeneratePuzzleInput(inputD3)));
+    public void D3_RucksackReorganization_Part1() 
+        => Assert.Equal(157, D3RucksackReorganization.SolvePart1(GeneratePuzzleInput(inputD3)));
 
     [Fact]
-    public void D4_CampCleanup_Part1() => Assert.Equal(2, D4CampCleanup.SolvePart1(GeneratePuzzleInput(inputD4)));
+    public void D3_RucksackReorganization_Part2() 
+        => Assert.Equal(70, D3RucksackReorganization.SolvePart2(GeneratePuzzleInput(inputD3)));
 
     [Fact]
-    public void D4_CampCleanup_Part2() => Assert.Equal(4, D4CampCleanup.SolvePart2(GeneratePuzzleInput(inputD4)));
+    public void D4_CampCleanup_Part1() 
+        => Assert.Equal(2, D4CampCleanup.SolvePart1(GeneratePuzzleInput(inputD4)));
 
     [Fact]
-    public void D5_SupplyStacks_Part1() => Assert.Equal("CMZ", D5SupplyStacks.SolvePart1(GeneratePuzzleInput(inputD5)));
+    public void D4_CampCleanup_Part2() 
+        => Assert.Equal(4, D4CampCleanup.SolvePart2(GeneratePuzzleInput(inputD4)));
 
     [Fact]
-    public void D5_SupplyStacks_Part2() => Assert.Equal("MCD", D5SupplyStacks.SolvePart2(GeneratePuzzleInput(inputD5)));
+    public void D5_SupplyStacks_Part1() 
+        => Assert.Equal("CMZ", D5SupplyStacks.SolvePart1(GeneratePuzzleInput(inputD5)));
+
+    [Fact]
+    public void D5_SupplyStacks_Part2() 
+        => Assert.Equal("MCD", D5SupplyStacks.SolvePart2(GeneratePuzzleInput(inputD5)));
 
     [Theory]
     [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
@@ -127,7 +159,8 @@ public class AocTests_2022 : AocTests_Base
     [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 6)]
     [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 10)]
     [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11)]
-    public void D6_TuningTrouble_Part1(string input, int expectedOutput) => Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart1(GeneratePuzzleInput(input)));
+    public void D6_TuningTrouble_Part1(string input, int expectedOutput) 
+        => Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart1(GeneratePuzzleInput(input)));
 
     [Theory]
     [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
@@ -135,17 +168,32 @@ public class AocTests_2022 : AocTests_Base
     [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 23)]
     [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 29)]
     [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26)]
-    public void D6_TuningTrouble_Part2(string input, int expectedOutput) => Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart2(GeneratePuzzleInput(input)));
+    public void D6_TuningTrouble_Part2(string input, int expectedOutput) 
+        => Assert.Equal(expectedOutput, D6TuningTrouble.SolvePart2(GeneratePuzzleInput(input)));
 
     [Fact]
-    public void D7_NoSpaceLeftOnDevice_Part1() => Assert.Equal(95437, D7NoSpaceLeftOnDevice.SolvePart1(GeneratePuzzleInput(inputD7)));
+    public void D7_NoSpaceLeftOnDevice_Part1() 
+        => Assert.Equal(95437, D7NoSpaceLeftOnDevice.SolvePart1(GeneratePuzzleInput(inputD7)));
 
     [Fact]
-    public void D7_NoSpaceLeftOnDevice_Part2() => Assert.Equal(24933642, D7NoSpaceLeftOnDevice.SolvePart2(GeneratePuzzleInput(inputD7)));
+    public void D7_NoSpaceLeftOnDevice_Part2() 
+        => Assert.Equal(24933642, D7NoSpaceLeftOnDevice.SolvePart2(GeneratePuzzleInput(inputD7)));
 
     [Fact]
-    public void D8_TreetopTreeHouse_Part1() => Assert.Equal(21, D8TreetopTreeHouse.SolvePart1(GeneratePuzzleInput(inputD8)));
+    public void D8_TreetopTreeHouse_Part1() 
+        => Assert.Equal(21, D8TreetopTreeHouse.SolvePart1(GeneratePuzzleInput(inputD8)));
 
     [Fact]
-    public void D8_TreetopTreeHouse_Part2() => Assert.Equal(8, D8TreetopTreeHouse.SolvePart2(GeneratePuzzleInput(inputD8)));
+    public void D8_TreetopTreeHouse_Part2() 
+        => Assert.Equal(8, D8TreetopTreeHouse.SolvePart2(GeneratePuzzleInput(inputD8)));
+
+    [Fact]
+    public void D9_RopeBridge_Part1() 
+        => Assert.Equal(13, D9RopeBridge.SolvePart1(GeneratePuzzleInput(inputD9)));
+
+    [Theory]
+    [InlineData(inputD9, 1)]
+    [InlineData(inputD9Larger, 36)]
+    public void D9_RopeBridge_Part2(string input, int expectedOutput) 
+        => Assert.Equal(expectedOutput, D9RopeBridge.SolvePart2(GeneratePuzzleInput(input)));
 }

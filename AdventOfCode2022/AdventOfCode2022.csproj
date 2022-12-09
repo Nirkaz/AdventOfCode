@@ -16,9 +16,13 @@
     <None Remove="Input\PuzzleInputD6.txt" />
     <None Remove="Input\PuzzleInputD7.txt" />
     <None Remove="Input\PuzzleInputD8.txt" />
+    <None Remove="Input\PuzzleInputD9.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Input\PuzzleInputD9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Input\PuzzleInputD8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
