@@ -71,5 +71,8 @@ public class AocTests_2022_Control : AocTests_Base
     public void D10_CathodeRayTube_Part1() => Assert.Equal(12740, D10CathodeRayTube.SolvePart1());
 
     [Fact]
-    public void D10_CathodeRayTube_Part2() => Assert.Equal(expectedOutputD10, D10CathodeRayTube.SolvePart2());
+    public void D11_MonkeyInTheMiddle_Part1() => Assert.Equal(182293, D11MonkeyInTheMiddle.SolvePart1());
+
+    [Fact]
+    public void D11_MonkeyInTheMiddle_Part2() => Assert.Equal(54832778815, D11MonkeyInTheMiddle.SolvePart2());
 }
