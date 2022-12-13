@@ -301,6 +301,14 @@ public class AocTests_2022 : AocTests_Base
             If false: throw to monkey 1
         """;
 
+    private const string inputD12 = """
+        Sabqponm
+        abcryxxl
+        accszExk
+        acctuvwj
+        abdefghi
+        """;
+
     [Fact]
     public void D1_CalorieCounting_Part1() 
         => Assert.Equal(24000, D1CalorieCounting.SolvePart1(GeneratePuzzleInput(inputD1)));
@@ -400,4 +408,12 @@ public class AocTests_2022 : AocTests_Base
     [Fact]
     public void D11_MonkeyInTheMiddle_Part2()
         => Assert.Equal(2713310158, D11MonkeyInTheMiddle.SolvePart2(GeneratePuzzleInput(inputD11)));
+
+    [Fact]
+    public void D12_HillClimbingAlgorithm_Part1()
+        => Assert.Equal(31, D12HillClimbingAlgorithm.SolvePart1(GeneratePuzzleInputAsJaggedArray<char>(inputD12)));
+
+    [Fact]
+    public void D12_HillClimbingAlgorithm_Part2()
+        => Assert.Equal(29, D12HillClimbingAlgorithm.SolvePart2(GeneratePuzzleInputAsJaggedArray<char>(inputD12)));
 }

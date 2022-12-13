@@ -43,3 +43,7 @@ Console.WriteLine($"\t Part 2: \n{D10CathodeRayTube.SolvePart2()}");
 Console.WriteLine($"{nameof(D11MonkeyInTheMiddle)}");
 Console.WriteLine($"\t Part 1: {D11MonkeyInTheMiddle.SolvePart1()}");
 Console.WriteLine($"\t Part 2: {D11MonkeyInTheMiddle.SolvePart2()}");
+
+Console.WriteLine($"{nameof(D12HillClimbingAlgorithm)}");
+Console.WriteLine($"\t Part 1: {D12HillClimbingAlgorithm.SolvePart1()}");
+Console.WriteLine($"\t Part 2: {D12HillClimbingAlgorithm.SolvePart2()}");
