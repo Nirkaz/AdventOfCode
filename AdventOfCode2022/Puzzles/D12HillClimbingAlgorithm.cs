@@ -8,7 +8,7 @@ public static class D12HillClimbingAlgorithm
     public static int SolvePart1(char[][]? customInput = null)
     {
         var input = customInput ?? PuzzleInput.GetFromFileAsJaggedArray<char>("PuzzleInputD12.txt");
-        GenerateGraph(input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start);
+        GenerateGraph(input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start, out _);
 
         return SearchBFS(graphs, start);
     }
@@ -16,23 +16,30 @@ public static class D12HillClimbingAlgorithm
     public static int SolvePart2(char[][]? customInput = null)
     {
         var input = customInput ?? PuzzleInput.GetFromFileAsJaggedArray<char>("PuzzleInputD12.txt");
-        GenerateGraph(input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start);
+        GenerateGraph(input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start, out List<Hill> possibleStarts);
 
-        return SearchBFS(graphs, start);
+        return possibleStarts.Select(s => SearchBFS(graphs, s)).Min();
     }
 
-    private static void GenerateGraph(char[][] input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start)
+    private static void GenerateGraph(char[][] input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start, out List<Hill> hills)
     {
         graphs = new Dictionary<string, HashSet<Hill>>();
         start = new Hill();
+        hills = new List<Hill>();
+
         for (int x = 0; x < input.Length; x++)
         {
             for (int y = 0; y < input[x].Length; y++)
             {
                 var hill = input[x][y];
                 var key = $"({x},{y}): {hill}";
+
                 if (hill == 'S')
                     start.Body = key;
+
+                if (hill == 'S' || hill == 'a')
+                    hills.Add(new Hill(key));
+
                 var neighbors = new List<Hill>();
                 var height = 1;
 
@@ -124,6 +131,8 @@ public static class D12HillClimbingAlgorithm
                 }
             }
         }
+
+        if (end?.Parent == null) return int.MaxValue;
 
         var tmp = end.Parent; 
         var count = 1;
