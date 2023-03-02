@@ -18,7 +18,7 @@ public static class D12HillClimbingAlgorithm
         var input = customInput ?? PuzzleInput.GetFromFileAsJaggedArray<char>("PuzzleInputD12.txt");
         GenerateGraph(input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start, out List<Hill> possibleStarts);
 
-        return possibleStarts.Select(s => SearchBFS(graphs, s)).Min();
+        return possibleStarts.AsParallel().Select(s => SearchBFS(graphs, s)).Min();
     }
 
     private static void GenerateGraph(char[][] input, out Dictionary<string, HashSet<Hill>> graphs, out Hill start, out List<Hill> hills)
